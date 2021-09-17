@@ -1,0 +1,14 @@
+item {
+    id: 1
+    name: 'cup'
+}
+
+item {
+    id: 2
+    name: 'teapot'
+}
+
+item {
+    id: 3
+    name: 'humidifier'
+}
