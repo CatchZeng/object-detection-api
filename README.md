@@ -44,4 +44,4 @@ OK (skipped=1)
 
 ### Image Segmentation
 
-[Coming soon]()
+[Train a Custom Image Segmentation Model Using TensorFlow Object Detection API Mask R-CNN](https://makeoptim.com/en/deep-learning/yiai-image-segmentation)
