@@ -35,3 +35,7 @@ OK (skipped=1)
 > $ pip install --upgrade tf-models-official==2.4.0
 > $ pip install --upgrade tensorflow==2.4.1
 > ```
+
+## Usage
+
+[Train a Custom Object Detection Model Using TensorFlow Object Detection API](https://makeoptim.com/en/deep-learning/yiai-object-detection)
