@@ -1,6 +1,6 @@
 # object-detection-api
 
-Make the use of [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) easier.
+Make it easy to train Object Detection(SSD) and Image Segmentation(Mask R-CNN) Using [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
 ## Requirements
 
@@ -38,4 +38,10 @@ OK (skipped=1)
 
 ## Usage
 
+### Object Detection
+
 [Train a Custom Object Detection Model Using TensorFlow Object Detection API](https://makeoptim.com/en/deep-learning/yiai-object-detection)
+
+### Image Segmentation
+
+[Coming soon]()
