@@ -9,6 +9,7 @@ gen-tfrecord:
 	-l annotations/label_map.pbtxt \
 	-o annotations/val.record
 dl-model:
+	mkdir -p pre-trained-models; \
 	model=ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8; \
 	curl -O http://download.tensorflow.org/models/object_detection/tf2/20200711/$$model.tar.gz; \
 	tar zxvf $$model.tar.gz; \

@@ -10,6 +10,7 @@ gen-tfrecord:
 	--include_masks=True \
 	--output_dir=./annotations
 dl-model:
+	mkdir -p pre-trained-models; \
 	model=mask_rcnn_inception_resnet_v2_1024x1024_coco17_gpu-8; \
 	curl -O http://download.tensorflow.org/models/object_detection/tf2/20200711/$$model.tar.gz; \
 	tar zxvf $$model.tar.gz; \
