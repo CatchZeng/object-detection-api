@@ -18,8 +18,21 @@ libprotoc 3.17.1
 
 ## Installation
 
+### Conda
+
 ```zsh
-$ make install
+$ 	conda create -n  od python=3.8.5 && conda activate od && make install
+......
+----------------------------------------------------------------------
+Ran 24 tests in 21.869s
+
+OK (skipped=1)
+```
+
+### Install directly (such as in [colab](https://colab.research.google.com/))
+
+```zsh
+$  make install
 ......
 ----------------------------------------------------------------------
 Ran 24 tests in 21.869s
