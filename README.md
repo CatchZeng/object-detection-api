@@ -21,7 +21,7 @@ libprotoc 3.17.1
 ### Conda
 
 ```zsh
-$ 	conda create -n  od python=3.8.5 && conda activate od && make install
+$ conda create -n  od python=3.8.5 && conda activate od && make install
 ......
 ----------------------------------------------------------------------
 Ran 24 tests in 21.869s
@@ -41,7 +41,6 @@ OK (skipped=1)
 ```
 
 For details, please refer to [colab demo](./colab/Mask_R_CNN.ipynb).
-
 
 > Note: If the installation fails, you can refer to the detailed steps in the [official document](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2.md).
 
