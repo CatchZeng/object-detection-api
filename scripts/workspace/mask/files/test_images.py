@@ -109,7 +109,7 @@ for image_path in IMAGE_PATHS:
         max_boxes_to_draw=200,
         min_score_thresh=.30)
 
-    plt.figure()
+    plt.figure(figsize=(10, 10))
     plt.imshow(image_np_with_detections)
 
     (filepath, filename) = os.path.split(image_path)

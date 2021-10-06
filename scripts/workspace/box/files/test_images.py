@@ -6,12 +6,13 @@ from object_detection.utils import visualization_utils as viz_utils
 import numpy as np
 from PIL import Image
 import matplotlib as mpl
+
 mpl.use('Agg')
 import matplotlib.pyplot as plt
 
 IMAGE_DIR = './images/test/'
 IMAGE_PATHS = glob.glob(os.path.join(IMAGE_DIR, '*.jpg'))
-SAVE_DIR='./images/test_annotated/'
+SAVE_DIR = './images/test_annotated/'
 
 # Load model
 # 640
@@ -30,8 +31,9 @@ print('Done! Took {} seconds'.format(elapsed_time))
 
 # Labels
 PATH_TO_LABELS = './annotations/label_map.pbtxt'
-category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS,
-                                                                    use_display_name=True)
+category_index = label_map_util.create_category_index_from_labelmap(
+    PATH_TO_LABELS, use_display_name=True)
+
 
 def load_image_into_numpy_array(path):
     """Load an image from file into a numpy array.
@@ -47,6 +49,7 @@ def load_image_into_numpy_array(path):
       uint8 numpy array with shape (img_height, img_width, 3)
     """
     return np.array(Image.open(path))
+
 
 for image_path in IMAGE_PATHS:
     print('Running inference for {}... '.format(image_path), end='')
@@ -73,32 +76,35 @@ for image_path in IMAGE_PATHS:
     # Convert to numpy arrays, and take index [0] to remove the batch dimension.
     # We're only interested in the first num_detections.
     num_detections = int(detections.pop('num_detections'))
-    detections = {key: value[0, :num_detections].numpy()
-                   for key, value in detections.items()}
+    detections = {
+        key: value[0, :num_detections].numpy()
+        for key, value in detections.items()
+    }
     detections['num_detections'] = num_detections
 
     # detection_classes should be ints.
-    detections['detection_classes'] = detections['detection_classes'].astype(np.int64)
+    detections['detection_classes'] = detections['detection_classes'].astype(
+        np.int64)
 
     image_np_with_detections = image_np.copy()
 
     viz_utils.visualize_boxes_and_labels_on_image_array(
-          image_np_with_detections,
-          detections['detection_boxes'],
-          detections['detection_classes'],
-          detections['detection_scores'],
-          category_index,
-          use_normalized_coordinates=True,
-          max_boxes_to_draw=200,
-          min_score_thresh=.30,
-          agnostic_mode=False)
+        image_np_with_detections,
+        detections['detection_boxes'],
+        detections['detection_classes'],
+        detections['detection_scores'],
+        category_index,
+        use_normalized_coordinates=True,
+        max_boxes_to_draw=200,
+        min_score_thresh=.30,
+        agnostic_mode=False)
 
-    plt.figure()
+    plt.figure(figsize=(10, 10))
     plt.imshow(image_np_with_detections)
 
     (filepath, filename) = os.path.split(image_path)
     if not os.path.exists(SAVE_DIR):
-      os.makedirs(SAVE_DIR)
+        os.makedirs(SAVE_DIR)
     save_path = os.path.join(SAVE_DIR, filename)
     plt.savefig(save_path)
 
