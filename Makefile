@@ -27,7 +27,7 @@ workspace-box:
 workspace-mask:
 	python scripts/workspace/mask/workspace.py --save_dir=$(SAVE_DIR) --name=$(NAME)
 	cp -r scripts/workspace/mask/files/* $(SAVE_DIR)/$(NAME)
-	python scripts/workspace/mask/replace.py --dir=$(SAVE_DIR)/$(NAME)/deployments --pattern="{{.Name}}" --repl=$(NAME)
+	python scripts/workspace/mask/replace.py --dir=$(SAVE_DIR)/$(NAME) --pattern="{{.Name}}" --repl=$(NAME)
 	cp models/research/object_detection/model_main_tf2.py $(SAVE_DIR)/$(NAME)
 	cp models/research/object_detection/exporter_main_v2.py $(SAVE_DIR)/$(NAME)
 	touch $(SAVE_DIR)/$(NAME)/annotations/label_map.pbtxt

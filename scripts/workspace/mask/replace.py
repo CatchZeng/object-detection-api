@@ -23,6 +23,9 @@ def replace(file_path, pattern, repl):
 def get_files(path, all_files):
     file_list = os.listdir(path)
     for file in file_list:
+        if ".ipynb" in file:
+            print('escape ' + file)
+            continue
         cur_path = os.path.join(path, file)
         if os.path.isdir(cur_path):
             get_files(cur_path, all_files)
