@@ -33,3 +33,13 @@ export:
 	--pipeline_config_path models/mask_rcnn_inception_resnet_v2_1024x1024_coco17_gpu-8/pipeline.config \
 	--trained_checkpoint_dir models/mask_rcnn_inception_resnet_v2_1024x1024_coco17_gpu-8/ \
 	--output_directory exported-models/mask_rcnn_inception_resnet_v2_1024x1024_coco17_gpu-8
+serving:
+	docker pull tensorflow/serving
+	docker run -d --name serving_base tensorflow/serving
+	# https://stackoverflow.com/a/45552938/14785930
+	docker exec -it serving_base mkdir -p /models/test-mask/1
+	docker cp exported-models/mask_rcnn_inception_resnet_v2_1024x1024_coco17_gpu-8/saved_model/. serving_base:/models/test-mask/1
+	docker commit --change "ENV MODEL_NAME test-mask" serving_base test-mask
+	docker rm -f serving_base
+serving-test:
+	python deployments/serving/client.py
