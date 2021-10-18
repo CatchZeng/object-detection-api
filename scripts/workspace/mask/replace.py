@@ -24,7 +24,7 @@ def get_files(path, all_files):
     file_list = os.listdir(path)
     for file in file_list:
         if ".ipynb" in file:
-            print('escape ' + file)
+            print('ignore ' + file)
             continue
         cur_path = os.path.join(path, file)
         if os.path.isdir(cur_path):
