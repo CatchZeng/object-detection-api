@@ -1,10 +1,10 @@
 gen-tfrecord:
-	python ../../scripts/preprocessing/generate_tfrecord.py \
+	python generate_tfrecord.py \
 	-x images/train \
 	-l annotations/label_map.pbtxt \
 	-o annotations/train.record
 
-	python ../../scripts/preprocessing/generate_tfrecord.py \
+	python generate_tfrecord.py \
 	-x images/val \
 	-l annotations/label_map.pbtxt \
 	-o annotations/val.record
