@@ -43,3 +43,6 @@ serving:
 	docker rm -f serving_base
 serving-test:
 	python deployments/serving/client.py
+flask:
+	cp annotations/label_map.pbtxt deployments/flask
+	cd deployments/flask && make build
