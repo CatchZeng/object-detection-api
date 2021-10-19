@@ -49,7 +49,7 @@ def request(image_np, server_url=SERVER_URL):
 def visualize(image_np, detections):
     image_np_with_detections = image_np.copy()
 
-    # 以下参考 https://github.com/vijaydwivedi75/Custom-Mask-RCNN_TF/blob/master/mask_rcnn_eval.ipynb
+    # https://github.com/vijaydwivedi75/Custom-Mask-RCNN_TF/blob/master/mask_rcnn_eval.ipynb
     # The following processing is only for single image
     detection_boxes = tf.squeeze(detections['detection_boxes'], [0])
     detection_masks = tf.squeeze(detections['detection_masks'], [0])

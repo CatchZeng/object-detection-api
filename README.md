@@ -53,10 +53,16 @@ For details, please refer to [colab demo](./colab/Mask_R_CNN.ipynb).
 
 ## Usage
 
-### Object Detection
+### Train
+
+#### Object Detection
 
 [Train a Custom Object Detection Model Using TensorFlow Object Detection API](https://makeoptim.com/en/deep-learning/yiai-object-detection)
 
-### Image Segmentation
+#### Image Segmentation
 
 [Train a Custom Image Segmentation Model Using TensorFlow Object Detection API Mask R-CNN](https://makeoptim.com/en/deep-learning/yiai-image-segmentation)
+
+### Deploy
+
+[Deploy image segmentation (Mask R-CNN) model service using TensorFlow Serving & Flask](https://makeoptim.com/en/deep-learning/yiai-serving-flask-mask-rcnn)
