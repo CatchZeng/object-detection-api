@@ -9,6 +9,8 @@ gen-tfrecord:
 	--val_annotations_file=images/val.json \
 	--include_masks=True \
 	--output_dir=./annotations
+
+	python gen_label_map.py
 dl-model:
 	mkdir -p pre-trained-models; \
 	model=mask_rcnn_inception_resnet_v2_1024x1024_coco17_gpu-8; \
