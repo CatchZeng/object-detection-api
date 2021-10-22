@@ -2,7 +2,7 @@ FROM python:3.8-slim-buster
 
 WORKDIR /app
 
-RUN pip3 install --no-cache-dir Flask pillow tensorflow==2.6.0
+RUN pip3 install --no-cache-dir Flask flask-cors pillow tensorflow==2.6.0
 
 COPY . .
 RUN rm -rf .vscode README.md Dockerfile Makefile

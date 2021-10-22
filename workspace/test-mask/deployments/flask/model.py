@@ -10,8 +10,6 @@ from object_detection.utils import visualization_utils as viz_utils
 
 from file import make_save_dir
 
-SERVER_URL = 'http://localhost:8501/v1/models/test-mask:predict'
-
 # Labels
 BASEPATH = os.path.dirname(os.path.realpath(__file__))
 PATH_TO_LABELS = os.path.join(BASEPATH, 'label_map.pbtxt')
@@ -34,7 +32,7 @@ def predict_image(server_url, file_path, file_name):
     return save_path
 
 
-def request(image_np, server_url=SERVER_URL):
+def request(image_np, server_url):
     payload = {"inputs": [image_np.tolist()]}
     headers = {"content-type": "application/json"}
     start = time.time()

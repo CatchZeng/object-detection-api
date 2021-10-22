@@ -17,12 +17,16 @@ class Error(Enum):
 
 def response_data(message, data=''):
     res = Response(0, message, data)
-    return jsonify(res)
+    return jsonify(res), 200, {
+        "Content-Type": "application/json; charset=utf-8"
+    }
 
 
 def response_err(e):
     res = e.value
-    return jsonify(res)
+    return jsonify(res), 200, {
+        "Content-Type": "application/json; charset=utf-8"
+    }
 
 
 def jsonify(r):

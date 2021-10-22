@@ -1,14 +1,17 @@
 from flask import Flask, request, url_for
+from flask_cors import CORS
 import os
 from api import response_data, response_err, Error
 from file import allowed_file, make_upload_dir, uuid_filename
 from model import predict_image
 
 app = Flask(__name__)
+CORS(app)
 app.config['JSON_AS_ASCII'] = False
 app.config['UPLOAD_FOLDER'] = make_upload_dir()
 
-SERVER_URL = os.getenv('SERVER_URL')
+SERVER_URL_ENV = os.getenv('SERVER_URL')
+SERVER_URL = SERVER_URL_ENV if SERVER_URL_ENV else "http://localhost:8501/v1/models/test-mask:predict"
 print('SERVER_URL:' + SERVER_URL)
 
 
