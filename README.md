@@ -65,4 +65,4 @@ For details, please refer to [colab demo](./colab/Mask_R_CNN.ipynb).
 
 ### Deploy
 
-[Deploy image segmentation (Mask R-CNN) model service using TensorFlow Serving & Flask](https://makeoptim.com/en/deep-learning/yiai-serving-flask-mask-rcnn)
+[Deploy image segmentation (Mask R-CNN) model service with TensorFlow Serving & Flask](https://makeoptim.com/en/deep-learning/yiai-serving-flask-mask-rcnn)
