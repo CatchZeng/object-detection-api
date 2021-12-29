@@ -1,14 +1,14 @@
 item {
-    id: 1
-    name: 'cup'
+  id: 1
+  name: 'cup'
 }
 
 item {
-    id: 2
-    name: 'teapot'
+  id: 2
+  name: 'humidifier'
 }
 
 item {
-    id: 3
-    name: 'humidifier'
+  id: 3
+  name: 'teapot'
 }

@@ -1,4 +1,6 @@
 gen-tfrecord:
+	python gen_label_map.py
+	
 	python generate_tfrecord.py \
 	-x images/train \
 	-l annotations/label_map.pbtxt \
