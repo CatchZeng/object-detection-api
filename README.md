@@ -32,7 +32,7 @@ OK (skipped=1)
 ### Install directly (such as in [colab](https://colab.research.google.com/))
 
 ```zsh
-$  make install
+$ make install
 ......
 ----------------------------------------------------------------------
 Ran 24 tests in 21.869s
@@ -57,11 +57,11 @@ For details, please refer to [colab demo](./colab/Mask_R_CNN.ipynb).
 
 #### Object Detection
 
-[Train a Custom Object Detection Model Using TensorFlow Object Detection API](https://makeoptim.com/en/deep-learning/yiai-object-detection)
+[The easiest way to Train a Custom Object Detection Model Using TensorFlow Object Detection API](https://makeoptim.com/en/deep-learning/yiai-object-detection)
 
 #### Image Segmentation
 
-[Train a Custom Image Segmentation Model Using TensorFlow Object Detection API Mask R-CNN](https://makeoptim.com/en/deep-learning/yiai-image-segmentation)
+[The easiest way to Train a Custom Image Segmentation Model Using TensorFlow Object Detection API Mask R-CNN](https://makeoptim.com/en/deep-learning/yiai-image-segmentation)
 
 ### Deploy
 
