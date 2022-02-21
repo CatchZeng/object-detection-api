@@ -1,6 +1,6 @@
 import requests
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 import numpy as np
 import time
 import tensorflow as tf
@@ -19,6 +19,8 @@ category_index = label_map_util.create_category_index_from_labelmap(
 
 def predict_image(server_url, file_path, file_name):
     image = Image.open(file_path)
+    # https://stackoverflow.com/a/30462851/14785930
+    image = ImageOps.exif_transpose(image)
     image_np = np.array(image)
 
     detections = request(image_np, server_url)
